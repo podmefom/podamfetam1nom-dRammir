@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto','Arial',sans-serif;
+}
+
+body {
+    background-color: #b7b6ff;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    padding: 12px 20px;
+    background-color: #615fff;
+    color: white;
+    letter-spacing: 2px;
+    border: transparent;
+    border-radius: 25px;
+    transition: all ease 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+header {
+    padding: 15px 30px 15px 30px;
+    background-color: #9190f7;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    position: sticky;
+    min-height: 125px;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    height: 75px;
+    width: 75px;
+}
+
+header img:hover {
+    cursor: pointer;
+}
+
+.header-navbar nav {
+    display: flex;
+    gap: 40px;
+}
+
+.header-navbar a {
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all ease 0.3s;
+}
+
+.header-navbar a:hover {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.header-actions i {
+    font-size: 18px;
+}
+
+.header-actions i:hover {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.categories {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+main {
+    padding: 5px 30px 5px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top: 50px;
+    gap: 60px;
+    justify-content: center;
+}
+
+.movie-card {
+    width: 100%;
+    padding: 15px;
+    background-color: #9190f7;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-card .card-button {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
