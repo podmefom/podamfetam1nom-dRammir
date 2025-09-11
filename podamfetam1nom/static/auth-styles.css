@@ -1,0 +1,123 @@
+
+.auth-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    width: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.3s ease;
+    overflow: hidden;
+    max-height: 90vh; 
+    opacity: 0;
+}
+
+.auth-modal-content {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px;
+    width: 100%;
+}
+
+.close-auth {
+    cursor: pointer;
+    font-size: 20px;
+    color: #a1a1a1;
+    border-radius: 15px;
+    transition: all ease .5s;
+}
+
+.close-auth:hover {
+    color: #000;
+    background-color: #f0f0f0
+}
+    
+
+.auth-forms-container {
+    width: 100%;
+    position: relative;
+    min-height: 300px; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.auth-button {
+    border: none;
+    width: 120px;
+    height: 50px;
+    letter-spacing: 2px;
+    background-color: white;
+}
+
+.auth-button-line {
+    height: 3px;
+    width: 120px;           
+    background-color: #ccc;  
+    margin: 10px auto 0 auto;
+    transition: all 0.3s ease;
+}
+
+.auth-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-tabs button {
+    font-size: 15px;
+}
+
+.auth-tabs:hover .auth-button {
+    color: black;
+    font-weight: bold;
+}
+
+.auth-tabs:hover .auth-button-line {
+    background-color: black;
+    height: 4px;             
+}
+
+.auth-button.active {
+    color: black !important;
+    font-weight: bold !important;
+    transform: translateY(-5px) !important;
+    animation: fadeIn .5s ease forwards
+}
+
+.auth-button-line.active {
+    background-color: black !important;
+    height: 4px !important;
+    animation: fadeIn .5s ease forwards
+}
+
+
+.auth-form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.auth-modal input {
+    border: 1px solid #c7c7c7;
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: all ease .5s;
+}

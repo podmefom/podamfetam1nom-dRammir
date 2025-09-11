@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #b7b6ff;
-    color: #333;
+    background-color: #000000;
+    color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
@@ -19,11 +19,12 @@ a {
     color: inherit;
 }
 
-button {
+button:not(.auth-button) {
     width: 120px;
     height: 50px;
     padding: 12px 20px;
-    background-color: #615fff;
+    background-color: #000000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.05);
     color: white;
     letter-spacing: 2px;
     border: transparent;
@@ -31,14 +32,15 @@ button {
     transition: all ease 0.3s;
 }
 
-button:hover {
+button:not(.auth-button):hover {
     transform: scale(1.05);
     cursor: pointer;
 }
 
 header {
     padding: 15px 30px 15px 30px;
-    background-color: #9190f7;
+    background-color: #000000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -49,9 +51,11 @@ header {
     z-index: 1000;
 }
 
-header img {
-    height: 75px;
-    width: 75px;
+.header-logo img {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
 }
 
 header img:hover {
@@ -67,12 +71,13 @@ header img:hover {
     letter-spacing: 4px;
     font-weight: bold;
     font-size: 18px;
-    transition: all ease 0.3s;
+    transition: all ease 0.4s;
 }
 
 .header-navbar a:hover {
-    font-size: 19px;
+    transform: scale(1.05);
     cursor: pointer;
+    text-shadow: 7px 7px 5px rgb(255, 0, 0, 0.2);
 }
 
 .header-actions {
@@ -82,19 +87,29 @@ header img:hover {
 
 .header-actions i {
     font-size: 18px;
+    transition: all ease .3s;
 }
 
 .header-actions i:hover {
-    font-size: 19px;
+    transform: scale(1.05);
     cursor: pointer;
+    text-shadow: 4px 4px 5px rgb(255, 0, 0, 0.2)
 }
 
 .categories {
     margin: 15px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    
+}
+
+.categories button {
+    transition: all ease .3s;
+}
+
+.categories button:hover {
+    transform: translateY(-7px);
 }
 
 main {
@@ -109,7 +124,8 @@ main {
 .movie-card {
     width: 100%;
     padding: 15px;
-    background-color: #9190f7;
+    background-color: #080808;
+    box-shadow: 10px 10px 10px 0px rgba(255, 0, 0, 0.03);
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
@@ -117,7 +133,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 5px;
     min-height: 400px;
+}
+
+.movie-card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
 .movie-card img {
@@ -131,4 +153,21 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+footer {
+    margin-top: 60px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.05);
+    color: white;
+    gap: 5px;
+}
+
+footer hr {
+    width: 200px;
 }

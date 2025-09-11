@@ -5,12 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЛЕТИМ</title>
     <script src="https://kit.fontawesome.com/f2919596e0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/common-styles.css">
+    <link rel="stylesheet" href="static/auth-styles.css">
+    
 </head>
 <body>
+    <div class="auth-modal">
+        <div class="auth-modal-content">
+            <div class="auth-tabs">
+                <button class="auth-button" data-button="login">Вход</button>
+                <div class="auth-button-line"></div>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-button" data-button="register">Регистрация</button>
+                <div class="auth-button-line"></div>
+            </div>  
+            <div class="auth-modal-header">
+                <span class="close-auth">&times;</span>
+            </div>
+        </div>
+    
+        <div class="auth-forms-container">
+            <div class="auth-form" id="login-form">
+                <h2>Вход</h2>
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Пароль</label>
+                    <input type="password" id="login-pass" placeholder="*******" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="login-btn" class="button">Войти</button>
+                </div>
+            </div>
+    
+            <div class="auth-form" id="register-form">
+                <h2>Регистрация аккаунта</h2>
+                <div class="form-group">
+                    <label for="register-name">Имя</label>
+                    <input type="text" id="register-name" placeholder="Иван" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-pass">Пароль</label>
+                    <input type="password" id="register-pass" placeholder="*******" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Подтверждение пароля</label>
+                    <input type="password" id="register-confirm-password" placeholder="*******" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="register-btn" class="button">Регистрация</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <header>
         <div class="header-logo">
-            <img src="img/REY.jpg" alt="rey">
+            <img src="img/logo.png" alt="rey">
         </div>
         
         <div class="header-navbar">
@@ -55,13 +114,13 @@
                 <img src="img/marvel.png" alt="marvel">
             </div>
             <h3>Марвел</h3>
-            <p>Интересный фильм</p>
+            <p>Экшн</p>
             <div class="rating" data-rating="4.5">
                 
             </div>
             <div class="card-button">
                 <button class="button-more">Подробнее</button>
-                <button class="watchlist">Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
@@ -71,82 +130,146 @@
                 <img src="img/breathofstorm.png" alt="breath-of-storm">
             </div>
             <h3>Дыхание шторма</h3>
-            <p>Неплохая драма и очень интересно</p>
+            <p>Драма</p>
             <div class="rating" data-rating="3.5">
 
             </div>
             <div class="card-button">
                 <button class="button-more">Подробнее</button>
-                <button class="watchlist">Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
-        <div class="movie-card" data-name="Дыхание шторма">
+        <div class="movie-card" data-name="Молачние Ягнят">
             <div class="image-container">
-                <img src="img/breathofstorm.png" alt="breath-of-storm">
+                <img src="img/SilenceLambs.png" alt="silencelambs">
             </div>
-            <h3>Дыхание шторма</h3>
-            <p>Неплохая драма и очень интересно</p>
+            <h3>Молачние Ягнят</h3>
+            <p>Триллер</p>
             <div class="rating" data-rating="3.5">
 
             </div>
             <div class="card-button">
                 <button class="button-more">Подробнее</button>
-                <button class="watchlist">Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
-        <div class="movie-card" data-name="Дыхание шторма">
+        <div class="movie-card" data-name="Гнев человеческий">
             <div class="image-container">
-                <img src="img/breathofstorm.png" alt="breath-of-storm">
+                <img src="img/gnevppl.png" alt="Гнев человеческий фото">
             </div>
-            <h3>Дыхание шторма</h3>
-            <p>Неплохая драма и очень интересно</p>
+            <h3>Гнев человеческий</h3>
+            <p>Боевик</p>
             <div class="rating" data-rating="3.5">
 
             </div>
             <div class="card-button">
                 <button class="button-more">Подробнее</button>
-                <button class="watchlist">Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
-        <div class="movie-card" data-name="Дыхание шторма">
+        <div class="movie-card" data-name="Достать ножи">
             <div class="image-container">
-                <img src="img/breathofstorm.png" alt="breath-of-storm">
+                <img src="img/KnivesOut.jpg" alt="Достать ножи">
             </div>
-            <h3>Дыхание шторма</h3>
-            <p>Неплохая драма и очень интересно</p>
+            <h3>Достать ножи</h3>
+            <p>Детектив</p>
             <div class="rating" data-rating="3.5">
 
             </div>
             <div class="card-button">
                 <button class="button-more">Подробнее</button>
-                <button class="watchlist">Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
-        <div class="movie-card" data-name="Дыхание шторма">
+        <div class="movie-card" data-name="Изгой">
             <div class="image-container">
-                <img src="img/breathofstorm.png" alt="breath-of-storm">
+                <img src="img/outcast.png" alt="Изгой">
             </div>
-            <h3>Дыхание шторма</h3>
-            <p>Неплохая драма и очень интересно</p>
+            <h3>Изгой</h3>
+            <p>Приключения</p>
             <div class="rating" data-rating="3.5">
 
             </div>
             <div class="card-button">
                 <button class="button-more">Подробнее</button>
-                <button class="watchlist">Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
+            </div>
+        </div>
+
+
+        <div class="movie-card" data-name="Куриоса">
+            <div class="image-container">
+                <img src="img/Kurios.png" alt="Куриоса">
+            </div>
+            <h3>Куриоса</h3>
+            <p>Мелодрама</p>
+            <div class="rating" data-rating="3.5">
+
+            </div>
+            <div class="card-button">
+                <button class="button-more">Подробнее</button>
+                <button class="button-watchlist">Смотреть позже</button>
+            </div>
+        </div>
+
+        <div class="movie-card" data-name="Шальная Карта">
+            <div class="image-container">
+                <img src="img/crazycard.png" alt="Шальная Карта">
+            </div>
+            <h3>Шальная Карта</h3>
+            <p>Боевик</p>
+            <div class="rating" data-rating="3.5">
+
+            </div>
+            <div class="card-button">
+                <button class="button-more">Подробнее</button>
+                <button class="button-watchlist">Смотреть позже</button>
+            </div>
+        </div>
+
+        <div class="movie-card" data-name="Переводчик">
+            <div class="image-container">
+                <img src="img/translater.png" alt="Переводчик">
+            </div>
+            <h3>Переводчик</h3>
+            <p>Боевик</p>
+            <div class="rating" data-rating="3.5">
+
+            </div>
+            <div class="card-button">
+                <button class="button-more">Подробнее</button>
+                <button class="button-watchlist">Смотреть позже</button>
+            </div>
+        </div>
+
+        <div class="movie-card" data-name="Стрелок">
+            <div class="image-container">
+                <img src="img/sniper.png" alt="Стрелок">
+            </div>
+            <h3>Стрелок</h3>
+            <p>Боевик</p>
+            <div class="rating" data-rating="3.5">
+
+            </div>
+            <div class="card-button">
+                <button class="button-more">Подробнее</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
 
     </main>
+    <script src="script.js"></script>
 </div>
 
     <footer>
-        <p>&copy; 2025 Летим. Все права защищены.</p>
+        <p>&copy; 2025 Летим</p>
+        <hr>
+        <p>Все права защищены</p>
     </footer>
 </body>
 </html>
