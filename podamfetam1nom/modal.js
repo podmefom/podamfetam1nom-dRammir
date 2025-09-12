@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileIcon = document.getElementById('profile-icon')
     const closeAuth = document.querySelector('.close-auth')
 
+
+
+                        // ----- МОДАЛЬНОЕ ОКНО ------ //
     authModal.style.opacity = "0";
 
     registerForm.style.display = "none";
@@ -75,3 +78,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
 });
+
+
