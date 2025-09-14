@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
     const authModal = document.querySelector('.auth-modal');
+    const authContainer = document.querySelector('.auth-container');
 
     const loginLine = loginBtn.closest('.auth-tabs').querySelector('.auth-button-line');
     const registerLine = registerBtn.closest('.auth-tabs').querySelector('.auth-button-line');
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // ----- МОДАЛЬНОЕ ОКНО ------ //
     authModal.style.opacity = "0";
+    authContainer.style.opacity = "0";
 
     registerForm.style.display = "none";
     loginBtn.classList.add('active');
@@ -23,8 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     profileIcon.addEventListener("click", () => {
         authModal.style.display = "flex"
+        authContainer.style.display = "flex"
         setTimeout(() => {
             authModal.style.opacity = "1";
+            authContainer   .style.opacity = "1";
         }, 10);
         
     })
@@ -32,8 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeAuth) {
         closeAuth.addEventListener("click", () => {
             authModal.style.opacity = "0";
+            authContainer.style.opacity = "0";
             setTimeout(() => {
                 authModal.style.display = "none";
+                authContainer.style.display = "none";
+            }, 100)
+        })
+    }
+
+    if (authContainer) {
+        authContainer.addEventListener("click", () => {
+            authModal.style.opacity = "0";
+            authContainer.style.opacity = "0";
+            setTimeout(() => {
+                authModal.style.display = "none";
+                authContainer.style.display = "none";
             }, 100)
         })
     }

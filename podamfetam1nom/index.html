@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЛЕТИМ</title>
     <script src="https://kit.fontawesome.com/f2919596e0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="static/common-styles.css">
-    <link rel="stylesheet" href="static/auth-styles.css">
+    <link rel="stylesheet" href="static/css/common-styles.css">
+    <link rel="stylesheet" href="static/css/auth-styles.css">
+    <link rel="stylesheet" href="static/css/index.css">
     
 </head>
 <body>
+    <div class="auth-container"></div>
     <div class="auth-modal">
         <div class="auth-modal-content">
             <div class="auth-tabs">
@@ -65,6 +67,7 @@
             </div>
         </div>
     </div>
+    
 
 
     <header>
@@ -74,7 +77,7 @@
         
         <div class="header-navbar">
             <nav>
-                <a href="#main">Главная</a>
+                <a href="index.html">Главная</a>
                 <a href="#categories">Категории</a>
                 <a href="#contacts">Контакты</a>
             </nav>
@@ -82,16 +85,11 @@
 
         <div class="header-actions">
             <div class="header-profile" id="profile-icon">
-                <i class="fa-solid fa-user"></i>
+                <a class="fa-solid fa-user"></a>
             </div>
-        
-            <div class="header-cart" id="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-count"></span>
-            </div>
-        
+
             <div class="header-watchlate" id="watchlate-icon">
-                <i class="fa-regular fa-clock"></i>
+                <a href="page-watchlist.html" class="fa-regular fa-clock"></a>
             </div>
         </div>
     </header>
@@ -267,9 +265,9 @@
 
 
     </main>
-    <script src="modal.js"></script>
-    <script src="index.js"></script>
-    <script src="categories.js"></script>
+    <script src="static/js/modal.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="static/js/categories.js"></script>
 </div>
 
     <footer>

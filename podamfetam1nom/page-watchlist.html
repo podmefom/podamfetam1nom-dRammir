@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <script src="https://kit.fontawesome.com/f2919596e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/common-styles.css">
+    <link rel="stylesheet" href="static/css/auth-styles.css">
+    <link rel="stylesheet" href="static/css/watchlist.css">
+</head>
+<body>
+    <div class="auth-container"></div>
+    <div class="auth-modal">
+        <div class="auth-modal-content">
+            <div class="auth-tabs">
+                <button class="auth-button" data-button="login">Вход</button>
+                <div class="auth-button-line"></div>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-button" data-button="register">Регистрация</button>
+                <div class="auth-button-line"></div>
+            </div>  
+            <div class="auth-modal-header">
+                <span class="close-auth">&times;</span>
+            </div>
+        </div>
+    
+        <div class="auth-forms-container">
+            <div class="auth-form" id="login-form">
+                <h2>Вход</h2>
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Пароль</label>
+                    <input type="password" id="login-pass" placeholder="*******" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="login-btn" class="button">Войти</button>
+                </div>
+            </div>
+    
+            <div class="auth-form" id="register-form">
+                <h2>Регистрация аккаунта</h2>
+                <div class="form-group">
+                    <label for="register-name">Имя</label>
+                    <input type="text" id="register-name" placeholder="Иван" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-pass">Пароль</label>
+                    <input type="password" id="register-pass" placeholder="*******" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Подтверждение пароля</label>
+                    <input type="password" id="register-confirm-password" placeholder="*******" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="register-btn" class="button">Регистрация</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-logo">
+            <img src="img/logo.png" alt="rey">
+        </div>
+        
+        <div class="header-navbar">
+            <nav>
+                <a href="index.html">Главная</a>
+                <a href="#categories">Категории</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+
+        <div class="header-actions">
+            <div class="header-profile" id="profile-icon">
+                <a class="fa-solid fa-user"></a>
+            </div>     
+            <div class="header-watchlate" id="watchlate-icon">
+                <a href="page-watchlist.html" class="fa-regular fa-clock"></a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main>
+        <div class="watchlist-container">
+            <div class="watchlist-header">
+                <h1>Смотреть позже</h1>
+            </div>
+            <div class="watchlist-content">
+                <div class="watchlist-movie">
+                    <h3 class="movie-name" id="movie-name">Синистер</h3>
+                    <hr>
+                    <h3 class="movie-time" id="movie-time">Ужасы</h3>
+                    <hr>
+                    <h3 class="movie-genre" id="movie-genre">2:00:15</h3>
+                    <button class="watchlist-start">Начать просмотр</button>
+                </div>
+                <div class="watchlist-movie">
+                    <h3 class="movie-name" id="movie-name">Переводчик</h3>
+                    <hr>
+                    <h3 class="movie-time" id="movie-time">Боевик</h3>
+                    <hr>
+                    <h3 class="movie-genre" id="movie-genre">1:48:22</h3>
+                    <button class="watchlist-start">Начать просмотр</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    
+    <footer>
+        <p>&copy; 2025 Летим</p>
+        <hr>
+        <p>Все права защищены</p>
+    </footer>
+
+    <script src="static/js/modal.js"></script>
+</body>
+</html>
