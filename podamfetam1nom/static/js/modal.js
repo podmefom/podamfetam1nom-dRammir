@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+     // ----- МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ------ //
     const loginBtn = document.querySelector('[data-button="login"]');
     const registerBtn = document.querySelector('[data-button="register"]');
     const loginForm = document.getElementById('login-form');
@@ -12,9 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileIcon = document.getElementById('profile-icon')
     const closeAuth = document.querySelector('.close-auth')
 
+    // ----- МОДАЛЬНОЕ ОКНО ИНФЫ О ФИЛЬМАХ ------ //
+   
 
 
-                        // ----- МОДАЛЬНОЕ ОКНО ------ //
+
+
+                        // ----- МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ------ //
     authModal.style.opacity = "0";
     authContainer.style.opacity = "0";
 
@@ -24,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     profileIcon.addEventListener("click", () => {
+        authModal.style.pointerEvents = "all";
         authModal.style.display = "flex"
         authContainer.style.display = "flex"
         setTimeout(() => {
@@ -35,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (closeAuth) {
         closeAuth.addEventListener("click", () => {
-            authModal.style.opacity = "0";
+            authModal.style.pointerEvents = "none";
+            authModal.style.opacity = "0"; 
             authContainer.style.opacity = "0";
             setTimeout(() => {
                 authModal.style.display = "none";
@@ -46,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (authContainer) {
         authContainer.addEventListener("click", () => {
+            authModal.style.pointerEvents = "none";
             authModal.style.opacity = "0";
             authContainer.style.opacity = "0";
             setTimeout(() => {
@@ -94,6 +102,54 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 50);
         }, 300);
     });
+
+                         // ----- МОДАЛЬНОЕ ОКНО ИНФЫ О ФИЛЬМАХ ------ //
+    const modalMore = document.querySelector('.modal-movie-more')
+    const buttonsMore =  document.querySelectorAll('[data-button="movie-more"]');
+    const closeMore = document.querySelector('.close-more')
+
+
+    console.log(buttonsMore)
+
+    modalMore.style.opacity = "0";
+
+    buttonsMore.forEach(button => {
+        button.addEventListener("click", () => {
+            modalMore.style.pointerEvents = "all";
+            modalMore.style.display = "flex";
+            authContainer.style.display = "flex";
+            
+            setTimeout(() => {
+                modalMore.style.opacity = "1";
+                authContainer.style.opacity = "1";
+            }, 10);
+        });
+    });
+
+    if (closeMore) {
+        closeMore.addEventListener("click", () => {
+            modalMore.style.pointerEvents = "none";
+            modalMore.style.opacity = "0"; 
+            authContainer.style.opacity = "0";
+            setTimeout(() => {
+                modalMore.style.display = "none";
+                authContainer.style.display = "none";
+            }, 100)
+        })
+    }
+
+    if (authContainer) {
+        authContainer.addEventListener("click", () => {
+            modalMore.style.pointerEvents = "none";
+            modalMore.style.opacity = "0";
+            authContainer.style.opacity = "0";
+            setTimeout(() => {
+                modalMore.style.display = "none";
+                authContainer.style.display = "none";
+            }, 100)
+        })
+    }
+
 });
 
-
+   

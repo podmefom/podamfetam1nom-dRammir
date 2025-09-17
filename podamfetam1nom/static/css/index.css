@@ -1,7 +1,7 @@
 main {
     padding: 5px 30px 5px 30px;
     display: grid;
-    grid-template-columns: repeat(5, 250px);
+    grid-template-columns: repeat(5, 270px);
     margin-top: 50px;
     gap: 60px;
     justify-content: center;
