@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Корзина</title>
+    <title>Смотреть позже</title>
     <script src="https://kit.fontawesome.com/f2919596e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/common-styles.css">
     <link rel="stylesheet" href="static/css/auth-styles.css">
@@ -76,7 +76,6 @@
             <nav>
                 <a href="index.html">Главная</a>
                 <a href="#categories">Категории</a>
-                <a href="#contacts">Контакты</a>
             </nav>
         </div>
 
@@ -86,48 +85,38 @@
             </div>     
             <div class="header-watchlate" id="watchlate-icon">
                 <a href="page-watchlist.html" class="fa-regular fa-clock"></a>
+                <span class="watchlist-count">0</span>
             </div>
         </div>
     </header>
-
-
 
     <main>
         <div class="watchlist-container">
             <div class="watchlist-header">
                 <h1>Смотреть позже</h1>
-            </div>
-            <div class="watchlist-content">
-                <div class="watchlist-movie">
-                    <img src="img/marvel.png" alt="marvel">
-                    <hr>
-                    <h3 class="movie-name" id="movie-name">Марвел</h3>
-                    <hr>
-                    <h3 class="movie-time" id="movie-time">Экшн</h3>
-                    <hr>
-                    <button class="watchlist-start">Начать просмотр</button>
+                <div class="watchlist-stats">
+                    <span id="watchlist-total">Всего: 0 фильмов</span>
                 </div>
-                <div class="watchlist-movie">
-                    <img src="img/KnivesOut.jpg" alt="Достать ножи">
-                    <hr>
-                    <h3 class="movie-name" id="movie-name">Достать ножи</h3>
-                    <hr>
-                    <h3 class="movie-time" id="movie-time">Детектив</h3>
-                    <hr>
-                    <button class="watchlist-start">Начать просмотр</button>
+            </div>
+            <div class="watchlist-content" id="watchlist-content">
+                <!-- Фильмы будут добавляться динамически через JavaScript -->
+                <div class="empty-watchlist">
+                    <i class="far fa-clock fa-3x"></i>
+                    <h3>Список "Смотреть позже" пуст</h3>
+                    <p>Добавьте фильмы, чтобы посмотреть их позже</p>
                 </div>
             </div>
         </div>
     </main>
 
-
-    
     <footer>
         <p>&copy; 2025 Летим</p>
         <hr>
         <p>Все права защищены</p>
     </footer>
 
+    <script src="static/js/watchlist-functions.js"></script>
     <script src="static/js/modal.js"></script>
+    <script src="static/js/page-watchlist.js"></script>
 </body>
 </html>

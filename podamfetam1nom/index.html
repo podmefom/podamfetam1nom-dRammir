@@ -75,18 +75,44 @@
                 <h4>Описание</h4>
                 <span class="close-more">&times;</span>
             </div>
-            <div class="modal-more-info">
-                <h3>Фильм</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos culpa reprehenderit inventore voluptatem eligendi error repudiandae ea quisquam ipsa rerum, vero ad blanditiis labore officiis fugiat, nisi quidem obcaecati? Voluptate?</p>
+            <div class="modal-movie-poster">
+                <img id="modal-movie-img" src="" alt="Постер фильма">
             </div>
-            <div class="modl-more-actions">
-                <button class="button-watchlist">Смотреть позже</button>
+            <div class="modal-more-info">
+                <h3 id="modal-movie-title">Фильм</h3>
+                <div class="movie-meta">
+                    <span class="movie-rating" id="modal-movie-rating">
+                        <i class="fas fa-star"></i> 0.0
+                    </span>
+                    <span class="movie-category" id="modal-movie-category">Жанр</span>
+                    <span class="movie-year" id="modal-movie-year">2024</span>
+                </div>
+                <p id="modal-movie-description">Описание загружается...</p>
+            </div>
+            <div class="modal-movie-extra">
+                <div class="extra-info">
+                    <span class="extra-label"><i class="fas fa-clock"></i> Длительность</span>
+                    <span class="extra-value" id="modal-movie-duration">120 мин</span>
+                </div>
+                <div class="extra-info">
+                    <span class="extra-label"><i class="fas fa-film"></i> Формат</span>
+                    <span class="extra-value" id="modal-movie-format">Full HD</span>
+                </div>
+            </div>
+            <div class="modal-more-actions">
+                <button class="button-watchlist">
+                    <i class="far fa-clock"></i> Смотреть позже
+                </button>
+                <button class="button-trailer">
+                    <i class="fab fa-youtube"></i> Трейлер
+                </button>
             </div>
         </div>
     </div>
 
 
     <header>
+        
         <div class="header-logo">
             <img src="img/logo.png" alt="rey">
         </div>
@@ -95,7 +121,6 @@
             <nav>
                 <a href="index.html">Главная</a>
                 <a href="#categories">Категории</a>
-                <a href="#contacts">Контакты</a>
             </nav>
         </div>
 
@@ -106,9 +131,11 @@
 
             <div class="header-watchlate" id="watchlate-icon">
                 <a href="page-watchlist.html" class="fa-regular fa-clock"></a>
+                <span class="watchlist-count">0</span>
             </div>
         </div>
-    </header>
+        
+    </header>   
 
 
 <div class="categories">
@@ -126,8 +153,9 @@
 <div class="main-container">
     <main>
 
-
-        <div class="movie-card" data-name="Марвел" data-category="action">
+        <div class="movie-card" data-name="Марвел" data-category="action" 
+             data-description="Захватывающая история о команде супергероев, объединившихся для спасения мира от космической угрозы. Зрелищные спецэффекты, эпические битвы и невероятные способности героев не оставят равнодушными любителей комиксов." 
+             data-rating="4.5">
             <div class="image-container">
                 <img src="img/marvel.png" alt="marvel">
             </div>
@@ -138,12 +166,13 @@
             </div>
             <div class="card-button">
                 <button class="button-more" data-button="movie-more">Подробнее</button>
-                <button class="button-watchlist" >Смотреть позже</button>
+                <button class="button-watchlist">Смотреть позже</button>
             </div>
         </div>
 
-
-        <div class="movie-card" data-name="Дыхание шторма" data-category="drama">
+        <div class="movie-card" data-name="Дыхание шторма" data-category="drama" 
+             data-description="Пронзительная история о молодой скрипачке, потерявшей слух в результате несчастного случая. Ее путь к принятию себя и поиску нового смысла жизни через музыку, которую она больше не может слышать, но продолжает чувствовать." 
+             data-rating="3.5">
             <div class="image-container">
                 <img src="img/breathofstorm.png" alt="breath-of-storm">
             </div>
@@ -158,7 +187,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Молачние Ягнят" data-category="triller">
+        <div class="movie-card" data-name="Молачние Ягнят" data-category="triller" 
+             data-description="Легендарный психологический триллер о стажерке ФБР Клариссе Старлинг, которая обращается за помощью к гениальному серийному убийце Ганнибалу Лектеру, чтобы поймать другого маньяка, известного как 'Буффало Билл'. Напряжение и саспенс нарастают с каждой минутой." 
+             data-rating="4.8">
             <div class="image-container">
                 <img src="img/SilenceLambs.png" alt="silencelambs">
             </div>
@@ -173,7 +204,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Гнев человеческий" data-category="fight">
+        <div class="movie-card" data-name="Гнев человеческий" data-category="fight" 
+             data-description="Жесткий и беспощадный боевик о таинственном мужчине, устраивающемся на работу в инкассаторскую компании. Его невероятные навыки и холодная ярость раскрываются постепенно, когда становится ясно, что у него есть собственные счеты с преступным миром." 
+             data-rating="4.3">
             <div class="image-container">
                 <img src="img/gnevppl.png" alt="Гнев человеческий фото">
             </div>
@@ -188,7 +221,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Достать ножи" data-category="detektiv">
+        <div class="movie-card" data-name="Достать ножи" data-category="detektiv" 
+             data-description="Остроумный детектив с элементами комедии о расследовании смерти известного писателя. Знаменитый детектив Бенуа Блан должен разобраться в хитросплетениях семейных тайн и лжи, где каждый из эксцентричных родственников имеет свой мотив." 
+             data-rating="4.6">
             <div class="image-container">
                 <img src="img/KnivesOut.jpg" alt="Достать ножи">
             </div>
@@ -203,7 +238,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Изгой" data-category="trip">
+        <div class="movie-card" data-name="Изгой" data-category="trip" 
+             data-description="Захватывающая история выживания курьера авиакомпании, который после крушения самолета оказывается на необитаемом острове. Четыре года одиночества, борьбы со стихией и поисков способа вернуться к цивилизации." 
+             data-rating="4.2">
             <div class="image-container">
                 <img src="img/outcast.png" alt="Изгой">
             </div>
@@ -218,8 +255,9 @@
             </div>
         </div>
 
-
-        <div class="movie-card" data-name="Куриоса" data-category="melodrama">
+        <div class="movie-card" data-name="Куриоса" data-category="melodrama" 
+             data-description="Романтическая драма о любовном треугольнике в Париже конца XIX века. Молодая поэтесса оказывается между своим женихом-консерватором и эксцентричным фотографом, который открывает ей новый, запретный мир эротической фотографии." 
+             data-rating="3.9">
             <div class="image-container">
                 <img src="img/Kurios.png" alt="Куриоса">
             </div>
@@ -234,7 +272,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Шальная Карта" data-category="fight">
+        <div class="movie-card" data-name="Шальная Карта" data-category="fight" 
+             data-description="Адреналиновый боевик о бывшем агенте спецслужб, вынужденном вернуться к старой жизни, когда его семью похищают. Чтобы спасти близких, он должен использовать все свои навыки в смертельно опасной игре, где каждая карта может стать последней." 
+             data-rating="3.7">
             <div class="image-container">
                 <img src="img/crazycard.png" alt="Шальная Карта">
             </div>
@@ -249,7 +289,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Переводчик" data-category="fight">
+        <div class="movie-card" data-name="Переводчик" data-category="fight" 
+             data-description="Напряженный боевик о военном переводчике, который случайно становится свидетелем подготовки теракта. За ним начинается охота, и теперь он должен не только выжить, но и предотвратить катастрофу, используя свои языковые навыки как оружие." 
+             data-rating="4.1">
             <div class="image-container">
                 <img src="img/translater.png" alt="Переводчик">
             </div>
@@ -264,7 +306,9 @@
             </div>
         </div>
 
-        <div class="movie-card" data-name="Стрелок" data-category="fight">
+        <div class="movie-card" data-name="Стрелок" data-category="fight" 
+             data-description="История отставного снайпера морской пехоты, которого втягивают в заговор высокого уровня. Когда на него совершают покушение, он начинает собственное расследование, используя свои легендарные навыки меткой стрельбы, чтобы выйти на заказчиков." 
+             data-rating="4.0">
             <div class="image-container">
                 <img src="img/sniper.png" alt="Стрелок">
             </div>
@@ -279,8 +323,11 @@
             </div>
         </div>
 
-
     </main>
+
+
+
+    <script src="static/js/watchlist-functions.js"></script>
     <script src="static/js/modal.js"></script>
     <script src="static/js/index.js"></script>
     <script src="static/js/categories.js"></script>

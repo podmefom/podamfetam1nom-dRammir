@@ -1,16 +1,22 @@
-
 .watchlist-container {
     display: flex;
     flex-direction: column;
     margin: 25px;
     margin-top: 50px;
-    
 }
 
 .watchlist-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     letter-spacing: 5px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.watchlist-stats {
+    font-size: 0.9rem;
+    color: #888;
 }
 
 .watchlist-content {
@@ -20,29 +26,48 @@
     box-shadow: 0px 0px 10px 10px rgba(255, 0, 0, 0.02);
     border-radius: 10px;
     width: 100%;
-    max-width: auto ;
+    max-width: auto;
+}
+
+.empty-watchlist {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.empty-watchlist i {
+    margin-bottom: 20px;
+    opacity: 0.5;
 }
 
 .watchlist-movie {
-    margin: 50px;   
-    padding: 15px;
-    padding: auto;
+    margin: 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 0px 10px 15px rgba(255, 0, 0, 0.02);
-    border-radius: 10px;
-    width: calc(100% - 100px);
+    border-radius: 15px;
+    width: calc(100% - 80px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.watchlist-movie:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 15px 20px rgba(255, 0, 0, 0.03);
 }
 
 .watchlist-movie img {
-    height: auto;
+    height: 100px;
     width: 70px;
+    object-fit: cover;
+    border-radius: 8px;
     flex-shrink: 0;
 }
 
 .watchlist-movie hr {
-    
     width: 200px;
     border: none;
     height: 3px;
@@ -54,7 +79,7 @@
     background-size: 200% 100%;
     animation: hr 5s linear infinite;
     border-radius: 2px;
-    margin: 15px 0;
+    margin: 15px 20px;
     flex-shrink: 0; 
 }
 
@@ -70,7 +95,20 @@
 .watchlist-start {
     animation: button 4s linear infinite;
     flex-shrink: 0;
-    min-width: 150px; 
+    min-width: 150px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.watchlist-start:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
 }
 
 @keyframes button {
@@ -88,12 +126,89 @@
     }
 }
 
-.movie-name,.movie-time,.movie-genre{
-    padding: 15px;
+.movie-name, .movie-time, .movie-genre {
+    padding: 12px 20px;
     background-color: rgba(255, 0, 0, 0.02);
     box-shadow: 0px 0px 10px 5px rgba(255, 0, 0, 0.02);
     border-radius: 25px;
-    min-width: unset;
+    min-width: 120px;
     text-align: center;
     flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.movie-name {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.movie-time {
+    color: #ccc;
+}
+
+.movie-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.remove-from-watchlist {
+    background: rgba(255, 107, 107, 0.2);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-from-watchlist:hover {
+    background: rgba(255, 107, 107, 0.3);
+    transform: scale(1.1);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .watchlist-movie {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .watchlist-movie hr {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .movie-name, .movie-time, .movie-genre {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .watchlist-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .watchlist-movie {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        margin: 15px;
+        width: calc(100% - 60px);
+    }
+    
+    .watchlist-movie hr {
+        width: 80%;
+        margin: 10px auto;
+    }
+    
+    .movie-actions {
+        margin-top: 15px;
+    }
 }
