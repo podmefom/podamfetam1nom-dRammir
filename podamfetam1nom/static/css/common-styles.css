@@ -5,6 +5,10 @@
     font-family: 'Roboto','Arial',sans-serif;
 }
 
+main {
+    flex: 1;
+}
+
 body {
     background-color: #000000;
     color: #ffffff; 

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-     // ----- МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ------ //
     const loginBtn = document.querySelector('[data-button="login"]');
     const registerBtn = document.querySelector('[data-button="register"]');
     const loginForm = document.getElementById('login-form');
@@ -13,13 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileIcon = document.getElementById('profile-icon')
     const closeAuth = document.querySelector('.close-auth')
 
-    // ----- МОДАЛЬНОЕ ОКНО ИНФЫ О ФИЛЬМАХ ------ //
-   
+    let isWatchTrailerOpen = false;
 
-
-
-
-                        // ----- МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ------ //
     authModal.style.opacity = "0";
     authContainer.style.opacity = "0";
 
@@ -27,16 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loginBtn.classList.add('active');
     loginLine.classList.add('active');
 
-
     profileIcon.addEventListener("click", () => {
         authModal.style.pointerEvents = "all";
         authModal.style.display = "flex"
         authContainer.style.display = "flex"
         setTimeout(() => {
             authModal.style.opacity = "1";
-            authContainer   .style.opacity = "1";
+            authContainer.style.opacity = "1";
         }, 10);
-        
     })
 
     if (closeAuth) {
@@ -48,16 +40,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 authModal.style.display = "none";
                 authContainer.style.display = "none";
             }, 100)
+            closeModal();
         })
     }
 
     if (authContainer) {
-        authContainer.addEventListener("click", () => {
-            authModal.style.pointerEvents = "none";
-            authModal.style.opacity = "0";
+        authContainer.addEventListener("click", (event) => {
+            if (isWatchTrailerOpen) {
+                isWatchTrailerOpen = false;
+                watchTrailer.style.pointerEvents = "none";
+                modalMore.style.pointerEvents = "all";
+                modalMore.style.opacity = "1";
+                modalMore.style.display = "flex";
+                
+                watchTrailer.style.opacity = "0";
+                setTimeout(() => {
+                    authContainer.style.zIndex = "1001";
+                    watchTrailer.style.display = "none";
+                }, 100);
+                return;
+            }
+            
+            modalMore.style.pointerEvents = "none";
+            modalMore.style.opacity = "0";
             authContainer.style.opacity = "0";
             setTimeout(() => {
-                authModal.style.display = "none";
+                modalMore.style.display = "none";
                 authContainer.style.display = "none";
             }, 100)
         })
@@ -103,13 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
 
-                         // ----- МОДАЛЬНОЕ ОКНО ИНФЫ О ФИЛЬМАХ ------ //
     const modalMore = document.querySelector('.modal-movie-more')
     const buttonsMore =  document.querySelectorAll('[data-button="movie-more"]');
     const closeMore = document.querySelector('.close-more')
-
-
-    console.log(buttonsMore)
 
     modalMore.style.opacity = "0";
 
@@ -128,20 +132,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (closeMore) {
         closeMore.addEventListener("click", () => {
+            if (isWatchTrailerOpen) return;
+            
             modalMore.style.pointerEvents = "none";
             modalMore.style.opacity = "0"; 
-            authContainer.style.opacity = "0";
-            setTimeout(() => {
-                modalMore.style.display = "none";
-                authContainer.style.display = "none";
-            }, 100)
-        })
-    }
-
-    if (authContainer) {
-        authContainer.addEventListener("click", () => {
-            modalMore.style.pointerEvents = "none";
-            modalMore.style.opacity = "0";
             authContainer.style.opacity = "0";
             setTimeout(() => {
                 modalMore.style.display = "none";
@@ -160,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const movieFormat = document.getElementById('modal-movie-format');
     const movieImg = document.getElementById('modal-movie-img');
 
-    // Данные о фильмах
     const moviesData = {
         'Марвел': {
             description: 'Захватывающая история о команде супергероев, объединившихся для спасения мира от космической угрозы.',
@@ -254,7 +247,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-
     document.querySelectorAll('.button-more').forEach(button => {
         button.addEventListener('click', function() {
             const movieCard = this.closest('.movie-card');
@@ -278,7 +270,6 @@ document.addEventListener('DOMContentLoaded', function() {
             movieYear.textContent = movie.year;
             movieDuration.textContent = movie.duration;
             movieFormat.textContent = movie.format;
-            
 
             const img = new Image();
             img.onload = function() {
@@ -290,13 +281,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 movieImg.style.opacity = '0.7';
             };
             img.src = movie.image;
-            
 
             modalMore.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     });
-    
 
     closeMoreBtn.addEventListener('click', closeModal);
     
@@ -311,10 +300,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function closeModal() {
+        if (isWatchTrailerOpen) return;
+        
         modalMore.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+
+    const buttonTrailer = document.querySelector('.button-trailer')
+    const buttonTrailerDisconfirm = document.querySelector('.button-disconfirm');
+    const buttonTrailerConfirm = document.querySelector('.button-confirm');
+    const watchTrailer = document.querySelector('.watch-trailer');
+
+    buttonTrailer.addEventListener('click', () => {
+        isWatchTrailerOpen = true;
+        watchTrailer.style.pointerEvents = "all";
+        modalMore.style.pointerEvents = "none";
+        modalMore.style.opacity = "1";
+        modalMore.style.display = "flex";
+        
+        watchTrailer.style.display = "flex";
+        authContainer.style.display = "flex";
+        authContainer.style.zIndex = "1009";
+        
+        setTimeout(() => {
+            watchTrailer.style.opacity = "1";
+            authContainer.style.opacity = "1";
+        }, 10);
+    });
+
+    buttonTrailerDisconfirm.addEventListener('click', () => {
+        isWatchTrailerOpen = false;
+        watchTrailer.style.pointerEvents = "none";
+        modalMore.style.pointerEvents = "all";
+        modalMore.style.opacity = "1";
+        modalMore.style.display = "flex";
+        
+        watchTrailer.style.opacity = "0";
+        setTimeout(() => {
+            authContainer.style.zIndex = "1001";
+            watchTrailer.style.display = "none";
+        }, 100);
+    });
+
+    buttonTrailerConfirm.addEventListener('click', () => {
+        isWatchTrailerOpen = false;
+        window.open('https://www.youtube.com/watch?v=9JTNhAOVosk&pp=ygUq0LzQvtC70YfQsNC90LjQtSDRj9Cz0L3Rj9GCINGC0YDQtdC50LvQtdGA', '_blank');
+
+        modalMore.style.pointerEvents = "all";
+        modalMore.style.opacity = "1";
+        modalMore.style.display = "flex";
+        
+        authContainer.style.zIndex = "1001";
+        watchTrailer.style.pointerEvents = "none";
+        watchTrailer.style.opacity = "0";
+        setTimeout(() => {
+            authContainer.style.zIndex = "1001";
+            watchTrailer.style.display = "none";
+        }, 100);
+    });
 });
-
-
-   

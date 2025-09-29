@@ -225,7 +225,7 @@
 }
 
 .modal-movie-more.active {
-    animation: modalAppear 0.4s ease-out forwards;
+    animation: modalAppear 0.5s ease-out forwards;
 }
 
 /* Адаптивность */
@@ -293,4 +293,48 @@
     .modal-more-info p {
         font-size: 0.9rem;
     }
+}
+
+
+
+.watch-trailer {
+    position: fixed;
+    top: 38%;
+    left: 38%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1010;
+
+    box-shadow: 
+        0 10px 30px rgba(255, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    gap: 25px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.watch-trailer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.watch-trailer-info h2 {
+    color: red;
+}
+
+.watch-trailer-actions {
+    display: flex;
+    gap: 20px;
 }

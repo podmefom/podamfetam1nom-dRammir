@@ -1,0 +1,109 @@
+/* Основной контейнер */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Модальное окно плеера */
+.modal-movie-player {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-player-content {
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.modal-player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-player-header h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-player {
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-player-video {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 15px;
+}
+
+.modal-player-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.modal-player-info {
+    text-align: left;
+}
+
+.modal-player-info h3 {
+    font-size: 1.8rem;
+    margin: 0 0 10px;
+}
+
+.modal-player-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+}
+
+.movie-rating, .movie-duration, .movie-quality {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.movie-rating i, .movie-duration i {
+    color: #f5c518;
+}
+
+/* Отладочный текст */
+#movie-player-error {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .modal-player-content {
+        width: 95%;
+        padding: 15px;
+    }
+    .modal-player-video {
+        height: 300px;
+    }
+    .modal-player-info h3 {
+       

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Просмотр фильма</title>
+    <script src="https://kit.fontawesome.com/f2919596e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/common-styles.css">
+    <link rel="stylesheet" href="static/css/watch-page.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="img/logo.png" alt="rey">
+        </div>
+        <div class="header-navbar">
+            <nav>
+                <a href="index.html">Главная</a>
+                <a href="#categories">Категории</a>
+            </nav>
+        </div>
+        <div class="header-actions">
+            <div class="header-profile" id="profile-icon">
+                <a class="fa-solid fa-user"></a>
+            </div>
+            <div class="header-watchlate" id="watchlate-icon">
+                <a href="page-watchlist.html" class="fa-regular fa-clock"></a>
+                <span class="watchlist-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="modal-movie-player">
+                <div class="modal-player-content">
+                    <div class="modal-player-header">
+                        <h4 id="player-movie-title">Просмотр фильма</h4>
+                        <span class="close-player">&times;</span>
+                    </div>
+                    <div class="modal-player-video">
+                        <iframe id="movie-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-player-info">
+                        <h3 id="movie-title">The Silence of the Lambs</h3>
+                        <p id="movie-description">Clarice Starling is a top student at the FBI's training academy. Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism. Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.</p>
+                        <div class="movie-meta">
+                            <span class="movie-rating"><i class="fas fa-star"></i> 8.6</span>
+                            <span class="movie-duration"><i class="fas fa-clock"></i> 119 min</span>
+                            <span class="movie-quality">HD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="movie-player-error" style="display:none; color:red;">Ошибка: Плеер не загрузился. Проверь ссылку или интернет-соединение.</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Летим</p>
+        <hr>
+        <p>Все права защищены</p>
+    </footer>
+
+    <script src="static/js/watch-page.js"></script>
+</body>
+</html>

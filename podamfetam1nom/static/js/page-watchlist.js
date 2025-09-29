@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateWatchlistCount(); 
                 renderWatchlist();
                 
-                alert(`Фильм "${removedMovie.title}" удален из списка`);
             });
         });
         
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', function() {
                 const index = parseInt(this.closest('.watchlist-movie').getAttribute('data-index'));
                 const movie = watchlist[index];
-                alert(`Начинаем просмотр фильма: ${movie.title}`);
+
             });
         });
     }
