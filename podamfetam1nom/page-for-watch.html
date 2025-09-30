@@ -6,9 +6,70 @@
     <title>Просмотр фильма</title>
     <script src="https://kit.fontawesome.com/f2919596e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/common-styles.css">
-    <link rel="stylesheet" href="static/css/watch-page.css">
+    <link rel="stylesheet" href="static/css/page-for-watch.css">
+    <link rel="stylesheet" href="static/css/auth-styles.css">
+    <link rel="stylesheet" href="static/css/modal-more.css">
 </head>
 <body>
+
+
+    <div class="auth-container"></div>
+    <div class="auth-modal">
+        <div class="auth-modal-content">
+            <div class="auth-tabs">
+                <button class="auth-button" data-button="login">Вход</button>
+                <div class="auth-button-line"></div>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-button" data-button="register">Регистрация</button>
+                <div class="auth-button-line"></div>
+            </div>  
+            <div class="auth-modal-header">
+                <span class="close-auth">&times;</span>
+            </div>
+        </div>
+    
+        <div class="auth-forms-container">
+            <div class="auth-form" id="login-form">
+                <h2>Вход</h2>
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Пароль</label>
+                    <input type="password" id="login-pass" placeholder="*******" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="login-btn" class="button">Войти</button>
+                </div>
+            </div>
+    
+            <div class="auth-form" id="register-form">
+                <h2>Регистрация аккаунта</h2>
+                <div class="form-group">
+                    <label for="register-name">Имя</label>
+                    <input type="text" id="register-name" placeholder="Иван" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-pass">Пароль</label>
+                    <input type="password" id="register-pass" placeholder="*******" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Подтверждение пароля</label>
+                    <input type="password" id="register-confirm-password" placeholder="*******" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="register-btn" class="button">Регистрация</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="header-logo">
             <img src="img/logo.png" alt="rey">
@@ -32,18 +93,15 @@
 
     <main>
         <div class="main-container">
-            <div class="modal-movie-player">
-                <div class="modal-player-content">
-                    <div class="modal-player-header">
-                        <h4 id="player-movie-title">Просмотр фильма</h4>
-                        <span class="close-player">&times;</span>
+            <div class="movie-player">
+                <div class="player-content">
+                    <div class="player-video">
+                        <iframe width="720" height="405" src="https://rutube.ru/play/embed/a4e9818b98f7057404c538d1807e7629/" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
-                    <div class="modal-player-video">
-                        <iframe id="movie-iframe" src="" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="modal-player-info">
-                        <h3 id="movie-title">The Silence of the Lambs</h3>
-                        <p id="movie-description">Clarice Starling is a top student at the FBI's training academy. Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism. Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.</p>
+                    <div class="player-info">
+                        <h3 id="movie-title">Молчание ягнят</h3>
+                        <p id="movie-description">Кларисса Старлинг — лучшая ученица академии ФБР. Джек Кроуфорд хочет, чтобы Кларисса допросила доктора Ганнибала Лектера, блестящего психиатра и жестокого психопата, отбывающего пожизненный срок за убийства и каннибализм. Кроуфорд считает, что Лектер может знать подробности дела, и Старлинг, будучи привлекательной молодой женщиной, может стать для него приманкой.
+                        </p>
                         <div class="movie-meta">
                             <span class="movie-rating"><i class="fas fa-star"></i> 8.6</span>
                             <span class="movie-duration"><i class="fas fa-clock"></i> 119 min</span>
@@ -52,7 +110,17 @@
                     </div>
                 </div>
             </div>
-            <div id="movie-player-error" style="display:none; color:red;">Ошибка: Плеер не загрузился. Проверь ссылку или интернет-соединение.</div>
+            <div class="all-movies-carousel">
+                <h2>Все фильмы</h2>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-prev">‹</button>
+                    <div class="carousel-track" id="all-movies-carousel">
+                        <!-- сюда вставятся карточки -->
+                    </div>
+                    <button class="carousel-btn carousel-next">›</button>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -63,5 +131,9 @@
     </footer>
 
     <script src="static/js/watch-page.js"></script>
+    <script src="static/js/watchlist-functions.js"></script>
+    <script src="static/js/modal.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="static/js/categories.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+let moviesData;
+
 document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.querySelector('[data-button="login"]');
     const registerBtn = document.querySelector('[data-button="register"]');
@@ -144,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
+
+    // МОДАЛЬНОЕ ОКНО ДЛЯ ИНФЫ О ФИЛЬМАХ
     const closeMoreBtn = document.querySelector('.close-more');
     const movieTitle = document.getElementById('modal-movie-title');
     const movieDescription = document.getElementById('modal-movie-description');
@@ -153,8 +157,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const movieDuration = document.getElementById('modal-movie-duration');
     const movieFormat = document.getElementById('modal-movie-format');
     const movieImg = document.getElementById('modal-movie-img');
+    const buttonWatchlist = document.getElementById('button-watchlist')
 
-    const moviesData = {
+    moviesData = {
         'Марвел': {
             description: 'Захватывающая история о команде супергероев, объединившихся для спасения мира от космической угрозы.',
             rating: '4.5',
@@ -306,6 +311,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
     }
 
+    buttonWatchlist.addEventListener('click', () => {
+        window.location.href = 'page-for-watch.html';
+    });
+
+    // МОДАЛЬНОЕ ОКНО ДЛЯ КНОПКИ ТРЕЙЛЕР
     const buttonTrailer = document.querySelector('.button-trailer')
     const buttonTrailerDisconfirm = document.querySelector('.button-disconfirm');
     const buttonTrailerConfirm = document.querySelector('.button-confirm');
@@ -358,4 +368,32 @@ document.addEventListener('DOMContentLoaded', function() {
             watchTrailer.style.display = "none";
         }, 100);
     });
+
+
+    // карусель для page-for watch //
+
+
+    function renderAllMoviesCarousel() {
+        const container = document.getElementById('all-movies-carousel');
+        
+        console.log('=== DEBUG INFO ===');
+        console.log('Контейнер:', container);
+        console.log('moviesData:', moviesData);
+        console.log('Тип moviesData:', typeof moviesData);
+        console.log('Ключи moviesData:', moviesData ? Object.keys(moviesData) : 'нет данных');
+        
+        if (!container) {
+            console.log('❌ Контейнер для карусели не найден - проверь ID в HTML');
+            return;
+        }
+        
+        if (!moviesData) {
+            console.log('❌ moviesData не найден');
+            return;
+        }
+        
+        console.log('✅ Все ок, создаем карусель...');
+        // остальной код...
+    }
+
 });
